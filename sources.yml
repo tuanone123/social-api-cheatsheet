@@ -3,11 +3,6 @@
 # `selector` is an optional CSS selector to narrow the extracted text (reduces noise).
 # If a selector breaks (site redesign), fix it here — no code change needed.
 sources:
-  - slug: facebook
-    name: "Facebook Graph API Changelog"
-    url: "https://developers.facebook.com/docs/graph-api/changelog/"
-    selector: "div[role='main'], main"
-
   - slug: telegram
     name: "Telegram Bot API (Recent changes)"
     url: "https://core.telegram.org/bots/api-changelog"
@@ -28,5 +23,8 @@ sources:
     url: "https://discord.com/developers/docs/change-log"
     selector: "main, body"
 
-# NOTE: Zalo OA has no stable public changelog feed, so it is tracked manually
-# (edit data/zalo-oa.yml) rather than auto-watched here.
+# Manually-tracked platforms (NOT auto-watched here):
+#   - facebook: developers.facebook.com blocks non-browser requests (HTTP 400 from
+#     datacenter IPs), so the changelog can't be fetched from CI. Track it by hand
+#     in data/facebook.yml. Sunset alerts (scripts/check_sunset.py) still run for it.
+#   - zalo-oa: no stable public changelog feed. Track by hand in data/zalo-oa.yml.
