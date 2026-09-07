@@ -42,7 +42,29 @@
 
 <!-- AUTOGEN:START -->
 
-**Platforms:** [Facebook Graph API](#facebook-graph-api) · [Telegram Bot API](#telegram-bot-api) · [TikTok for Developers](#tiktok-for-developers)
+**Platforms:** [Discord API](#discord-api) · [Facebook Graph API](#facebook-graph-api) · [Telegram Bot API](#telegram-bot-api) · [TikTok for Developers](#tiktok-for-developers) · [YouTube Data API](#youtube-data-api) · [Zalo Official Account API](#zalo-official-account-api)
+
+### Discord API
+> Docs: <https://discord.com/developers/docs/reference> · Changelog: <https://discord.com/developers/docs/change-log> · Auth: Bot token or OAuth2 (`Authorization: Bot <token>`)
+>
+> Base URL: `https://discord.com/api`
+
+**Versions**
+
+| Version | Released |
+|---|---|
+| v10 | 2022-10-01 |
+| v9 | 2021-06-01 |
+
+**Endpoints**
+
+| Endpoint | Method | Path | Scopes | Key fields | Notes |
+|---|---|---|---|---|---|
+| Create message | POST | `/v10/channels/{channel.id}/messages` | bot (SEND_MESSAGES) | content, embeds, components | Rate limited per channel; use webhooks for high volume |
+| Get gateway (bot) | GET | `/v10/gateway/bot` | bot | url, shards, session_start_limit | Required before opening a gateway WebSocket |
+| Interaction response | POST | `/v10/interactions/{id}/{token}/callback` | - | type, data | Must respond within 3s or the interaction fails |
+
+_Last verified: 2026-09-07_
 
 ### Facebook Graph API
 > Docs: <https://developers.facebook.com/docs/graph-api/> · Changelog: <https://developers.facebook.com/docs/graph-api/changelog/> · Auth: OAuth 2.0 Access Token (User / Page / App / Client Token)
@@ -101,6 +123,48 @@ _Last verified: 2026-09-07_
 | Query user info | GET | `/v2/user/info/` | user.info.basic | open_id, display_name, avatar_url | Fields requested via `fields` query param |
 | Init video publish | POST | `/v2/post/publish/video/init/` | video.publish | post_info, source_info | Content Posting API; returns publish_id |
 | Query creator info | POST | `/v2/post/publish/creator_info/query/` | video.publish | creator_username, privacy_level_options | Call before publishing to get allowed settings |
+
+_Last verified: 2026-09-07_
+
+### YouTube Data API
+> Docs: <https://developers.google.com/youtube/v3> · Changelog: <https://developers.google.com/youtube/v3/revision_history> · Auth: OAuth 2.0 (Google) or API key; quota-metered
+>
+> Base URL: `https://www.googleapis.com/youtube/v3`
+
+**Versions**
+
+| Version | Released |
+|---|---|
+| v3 | 2013-04-19 |
+
+**Endpoints**
+
+| Endpoint | Method | Path | Scopes | Key fields | Notes |
+|---|---|---|---|---|---|
+| Search | GET | `/search` | - | q, part, type, maxResults | Costs 100 quota units per call — use sparingly |
+| List videos | GET | `/videos` | - | id, part=snippet,statistics | 1 unit + parts; statistics gives view/like counts |
+| Upload video | POST | `/videos (resumable upload)` | https://www.googleapis.com/auth/youtube.upload | snippet, status | ~1600 quota units; resumable upload protocol |
+
+_Last verified: 2026-09-07_
+
+### Zalo Official Account API
+> Docs: <https://developers.zalo.me/docs/official-account> · Changelog: <https://developers.zalo.me/docs/official-account> · Auth: OAuth 2.0 access_token (Zalo OA); refreshed via refresh_token
+>
+> Base URL: `https://openapi.zalo.me`
+
+**Versions**
+
+| Version | Released |
+|---|---|
+| v3.0 | 2022-06-01 |
+
+**Endpoints**
+
+| Endpoint | Method | Path | Scopes | Key fields | Notes |
+|---|---|---|---|---|---|
+| Send customer-service message | POST | `/v3.0/oa/message/cs` | - | recipient.user_id, message.text | Only within the 48h customer-service window |
+| Get OA info | GET | `/v2.0/oa/getoa` | - | oa_id, name, num_follower | access_token passed in the `access_token` header |
+| Upload image | POST | `/v2.0/oa/upload/image` | - | file (multipart) | Returns attachment_id for use in messages |
 
 _Last verified: 2026-09-07_
 

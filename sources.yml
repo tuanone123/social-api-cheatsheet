@@ -17,3 +17,16 @@ sources:
     name: "TikTok for Developers Changelog"
     url: "https://developers.tiktok.com/doc/changelog/"
     selector: "main, body"
+
+  - slug: youtube
+    name: "YouTube Data API Revision History"
+    url: "https://developers.google.com/youtube/v3/revision_history"
+    selector: "div.devsite-article-body, main"
+
+  - slug: discord
+    name: "Discord API Change Log"
+    url: "https://discord.com/developers/docs/change-log"
+    selector: "main, body"
+
+# NOTE: Zalo OA has no stable public changelog feed, so it is tracked manually
+# (edit data/zalo-oa.yml) rather than auto-watched here.
