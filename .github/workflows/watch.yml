@@ -1,0 +1,40 @@
+name: Watch API changelogs
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # daily 02:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run watcher
+        id: watch
+        run: python scripts/watch.py
+
+      - name: Open PR when a changelog changed
+        if: steps.watch.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: upstream API changelog changed"
+          branch: auto/changelog-update
+          delete-branch: true
+          title: "🔔 Upstream API changelog changed — please curate"
+          body-path: .watch_summary.md
+          labels: changelog, needs-curation
+          add-paths: |
+            snapshots/**

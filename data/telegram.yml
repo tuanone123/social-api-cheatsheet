@@ -1,0 +1,33 @@
+platform: "Telegram Bot API"
+slug: telegram
+docs: "https://core.telegram.org/bots/api"
+changelog: "https://core.telegram.org/bots/api-changelog"
+auth: "Bot token from @BotFather (`https://api.telegram.org/bot<token>/METHOD`)"
+base_url: "https://api.telegram.org"
+current_version: "8.3"
+versioning: false
+# Telegram never sunsets old methods; it only adds/changes. Track the "Recent changes" section.
+versions:
+  - version: "8.3"
+    released: "2025-02-12"
+    sunset: ""
+endpoints:
+  - name: "getUpdates (long polling)"
+    method: "GET/POST"
+    path: "/bot{token}/getUpdates"
+    scopes: "-"
+    key_fields: "offset, timeout, allowed_updates"
+    notes: "Mutually exclusive with a set webhook"
+  - name: "setWebhook"
+    method: "POST"
+    path: "/bot{token}/setWebhook"
+    scopes: "-"
+    key_fields: "url, secret_token, allowed_updates"
+    notes: "Use secret_token to verify incoming updates"
+  - name: "sendMessage"
+    method: "POST"
+    path: "/bot{token}/sendMessage"
+    scopes: "-"
+    key_fields: "chat_id, text, parse_mode, reply_markup"
+    notes: "parse_mode: MarkdownV2 / HTML"
+last_checked: "2026-09-07"

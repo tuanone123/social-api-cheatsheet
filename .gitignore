@@ -1,0 +1,12 @@
+# Watcher scratch files (regenerated each run)
+.watch_summary.md
+.sunset_alerts.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets — never commit
+.env

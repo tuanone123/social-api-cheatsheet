@@ -1,0 +1,19 @@
+# Watch list for scripts/watch.py
+# Each source: the public changelog/docs page to diff for changes.
+# `selector` is an optional CSS selector to narrow the extracted text (reduces noise).
+# If a selector breaks (site redesign), fix it here — no code change needed.
+sources:
+  - slug: facebook
+    name: "Facebook Graph API Changelog"
+    url: "https://developers.facebook.com/docs/graph-api/changelog/"
+    selector: "div[role='main'], main"
+
+  - slug: telegram
+    name: "Telegram Bot API (Recent changes)"
+    url: "https://core.telegram.org/bots/api-changelog"
+    selector: "#dev_page_content"
+
+  - slug: tiktok
+    name: "TikTok for Developers Changelog"
+    url: "https://developers.tiktok.com/doc/changelog/"
+    selector: "main, body"

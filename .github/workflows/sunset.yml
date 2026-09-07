@@ -1,0 +1,33 @@
+name: Sunset alerts
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"   # weekly, Monday 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  sunset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install PyYAML
+
+      - name: Scan for expiring API versions
+        run: python scripts/check_sunset.py
+
+      - name: Open tracking issue
+        if: hashFiles('.sunset_alerts.md') != ''
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "🔔 API version sunset alerts"
+          content-filepath: .sunset_alerts.md
+          labels: sunset, maintenance
