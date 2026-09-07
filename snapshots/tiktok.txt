@@ -1,0 +1,376 @@
+Introduction
+/
+Changelog
+Introduction
+/
+Changelog
+Last updated August 26, 2026
+August 25, 2026
+August 19, 2026
+June 4, 2026
+May 21, 2026
+February 26, 2026
+January 20, 2026
+December 23, 2025
+October 18, 2025
+May 16, 2025
+April 26, 2025
+April 17, 2025
+February 28, 2025
+December 9, 2024
+November 4, 2024
+October 22, 2024
+October 8, 2024
+September 9, 2024
+July 23, 2024
+July 09, 2024
+June 24, 2024
+February 07, 2024
+January 17, 2024
+November 28, 2023
+November 3, 2023
+October 16, 2023
+October 5, 2023
+September 21, 2023
+August 10, 2023
+August 8, 2023
+July 20, 2023
+June 20, 2023
+June 8, 2023
+June 7, 2023
+June 5, 2023
+May 23, 2023
+May 22, 2023
+May 11, 2023
+May 10, 2023
+April 27, 2023
+March 22, 2023
+March 16, 2023
+March 2, 2023
+February 21, 2023
+On this page
+Changelog
+This document describes major and critical changes made to TikTok for Developer products and documentation. Please note that this document is not an exhaustive list of all changes.
+#
+August 25, 2026
+Product
+Data Portability API: Incorporated additional information about Login Kit in the Data Portability API product configuration on the Developer Portal.
+#
+August 19, 2026
+Documentation
+Data Portability API: Updated
+Get Started
+guide,
+Data Portability Application Guidelines
+, and
+FAQ
+to provide enhanced guidance on Login Kit dependency.
+#
+June 4, 2026
+Documentation
+Data Portability API: Updated
+Data Types documentation
+to accurately reflect current supported data categories and fields.
+#
+May 21, 2026
+Product
+Research Tools: Updated existing APIs to enrich and return additional parameters:
+Query Videos, Query User Liked Videos, Query User Pinned Videos, and Query User Reposted Videos now return favorites_count
+Query Video Comments returns display_name for comments and replies
+#
+February 26, 2026
+Product
+Research Tools: Updated data pipeline logic to ensure comprehensive coverage of all public video content, including videos not eligible for recommendation to the For You feed.
+#
+January 20, 2026
+Product
+TikTok GO: Launched TikTok GO for Dining and associated SaaS APIs.
+#
+December 23, 2025
+Product
+Research Tools: Added a
+data access application
+for vetted researchers.
+Mini Games: Released integration workflow and APIs for TikTok Mini Games.
+Website enhancement
+Organizations: Updated the user interface for organization management on the Developer Portal.
+#
+October 18, 2025
+Product
+Research Tools: Published a
+webpage for vetted researchers
+, explaining the types of data vetted researchers can access.
+#
+May 16, 2025
+Product
+Research Tools: Launched
+Batch Compliance APIs
+that allow you to retrieve the compliance status of user IDs in batches.
+#
+April 26, 2025
+Product
+Research Tools: Introduced data filtering to the Test Stage of the Virtual Compute Environment, limiting data access to users that have at least 25,000 followers.
+#
+April 17, 2025
+Product
+Research Tools: Updated existing APIs to enrich and return additional parameters:
+Query Videos, Query User Liked Videos, Query User Pinned Videos, and Query User Reposted Videos now include the following: video_mention_list, hashtag_info_list, sticker_info_list, video_label, video_tag
+Query User Info now includes author_profile_URL
+Query Video Comments now includes display_name
+#
+February 28, 2025
+Product
+Launched Hotel Integration solution to allow travel partners to create listings within TikTok.
+#
+December 9, 2024
+Product
+Research API: Launched TikTok Shop related APIs for EU based shops.
+#
+November 4, 2024
+Product
+Research API: Added hashtag_info, user bio_url, video_mention_list and video_label.
+#
+October 22, 2024
+App Requirements
+App Review: Added an app review section to the app page that requires additional information for app submission, and introduced technical specifications for app icons.
+#
+October 8, 2024
+Product
+Login Kit:
+Login Kit for Android
+now requires the authorization request's redirect URI to follow an HTTPS scheme.
+#
+September 9, 2024
+App Requirements
+URL Properties: Implemented
+verification of URL ownership
+as a mandatory component for app configuration. Only apps created after effective date require URL ownership verification.
+#
+July 23, 2024
+Product
+Embed Player: Added a code example for the Embed Player doc.
+#
+July 09, 2024
+Product
+Research API: Launched Playlist Info endpoint for Research API and added additional fields to existing APIs. Learn more about the
+Playlist Info endpoint
+.
+#
+June 24, 2024
+Documentation
+Developer Website: Updated
+Register Your App
+and
+App Review FAQ
+to accommodate the new app page interface. Published
+App Review Guidelines
+to facilitate understanding of our app review criteria.
+Website Enhancement
+Developer Website: Launched Sandbox mode and updated the app page interface. Learn more about
+Sandbox mode
+.
+#
+February 07, 2024
+Product
+Research API: Launched five additional APIs that allows querying liked videos, reposted videos, pinned videos and the followers and following lists of a user.
+#
+January 17, 2024
+Website Enhancement
+Developer Website: Introduced search function for technical documentation on
+developers.tiktok.com/doc
+.
+#
+November 28, 2023
+Website Enhancement
+Developer Website: Added a new space for
+blogs
+. You can now learn about our developer products and interesting stories from the tech teams that build TikTok.
+#
+November 3, 2023
+Product
+Content Posting API: TikTok's Content Posting API now supports Photos! Developers can now integrate with the
+new API endpoints
+to allow creators post photos to their TikTok account directly from your app. Learn more
+here
+.
+#
+October 16, 2023
+Product
+Login Kit: Released v2 of our QR code authorization API. Learn more about
+QR code authorization
+.
+#
+October 5, 2023
+Product
+Login Kit: TikTok's Login Kit is now available for use on Desktop. Learn more about
+Login Kit for Desktop
+.
+#
+September 21, 2023
+Product
+Login Kit: The deadline for web apps using v1 OAuth to migrate to v2 OAuth has been extended to February 29, 2024. Learn more about
+OAuth migration
+.
+Login Kit: The deadline for apps using
+user.info
+.basic to request continued access to data protected by new scopes has been extended to February 29, 2024. Learn more about
+User Info API scope migration
+.
+#
+August 10, 2023
+Product
+Research API: Expanded Research API to Europe-based non-profit academic institutions. Learn more
+here
+.
+#
+August 8, 2023
+Website Enhancement
+Developer Website: Developers may apply for assessment to integrate their app with TikTok before their app is launched to the public. Learn more in the
+submission requirements
+section of our developer guidelines.
+Developer Website: Added support for group collaboration using organizations. Developers working together can now register apps under organizations for shared access. Learn more
+here
+.
+#
+July 20, 2023
+Product
+Commercial Content API: Launched Commercial Content API (only including data from EU countries) to global researcher/professional. Learn more
+here
+.
+#
+June 20, 2023
+Product
+Share Kit: Released urgent hotfix in TikTok OpenSDK 0.2.1.2 to patch app redirect issues with Share Kit on Android 13+.
+#
+June 8, 2023
+Product
+TikTok OpenSDK: Our revamped
+Android
+and
+iOS
+SDKs, Login Kit and Share Kit, are available to checkout on GitHub. Get Started
+here
+.
+#
+June 7, 2023
+Product
+Content Posting API: TikTok's Direct Post API is live! Creators can now post content to their TikTok account directly from your app. Learn more
+here
+.
+#
+June 5, 2023
+Website Enhancement
+Developer Website: You can now also initiate deletion of your developer account from your
+account settings
+page.
+#
+May 23, 2023
+Product
+Content Posting API: TikTok's Content Posting API now supports video uploads by pulling content from a URL. Learn more here.
+#
+May 22, 2023
+Product
+Login Kit + Display API: user.info.basic returns fewer fields than before through Display APIs(include Post:/user/info/ and Get:/v2/user/info/). Learn more
+here
+.
+#
+May 11, 2023
+Product
+Login Kit: Released our improved OAuth v2 API for web apps to provide a secure authorization and token management flow. Learn more
+here
+.
+Documentation
+Developer Website: Consolidated
+Server API
+,
+Mobile SDK
+, and
+webhook
+documentation under Integration Essentials.
+#
+May 10, 2023
+Documentation
+Display API: Reorganized Display API user and video endpoint documentation:Consolidated v2
+user
+and
+video
+endpoint references under Display API.Archived v1 user and video endpoint documentation under
+Legacy API section
+.
+#
+April 27, 2023
+Product
+Video Kit:
+Announced deprecation and migration
+for Video Kit for Web (Share Video API).
+Content Posting API: Launched Content Posting API.
+Get started
+by uploading a video to TikTok!
+#
+March 22, 2023
+Documentation
+Developer Website: Published
+Developer Guidelines
+to provide a better understanding of our integration processes and requirements.
+#
+March 16, 2023
+Website Enhancement
+Developer Website: Added
+account settings
+page. You can now manage your email notification preferences to stay up-to-date on our latest news and products.
+#
+March 2, 2023
+Documentation
+Changelog: Introduced this changelog in our documentation section.
+#
+February 21, 2023
+Product
+Research API: Launched Research API to US non-profit academic institutions. Learn more
+here
+.
+Was this document helpful?
+On this page
+August 25, 2026
+August 19, 2026
+June 4, 2026
+May 21, 2026
+February 26, 2026
+January 20, 2026
+December 23, 2025
+October 18, 2025
+May 16, 2025
+April 26, 2025
+April 17, 2025
+February 28, 2025
+December 9, 2024
+November 4, 2024
+October 22, 2024
+October 8, 2024
+September 9, 2024
+July 23, 2024
+July 09, 2024
+June 24, 2024
+February 07, 2024
+January 17, 2024
+November 28, 2023
+November 3, 2023
+October 16, 2023
+October 5, 2023
+September 21, 2023
+August 10, 2023
+August 8, 2023
+July 20, 2023
+June 20, 2023
+June 8, 2023
+June 7, 2023
+June 5, 2023
+May 23, 2023
+May 22, 2023
+May 11, 2023
+May 10, 2023
+April 27, 2023
+March 22, 2023
+March 16, 2023
+March 2, 2023
+February 21, 2023
+August 25, 2026
