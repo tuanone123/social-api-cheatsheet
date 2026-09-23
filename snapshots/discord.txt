@@ -5,12 +5,12 @@ HTTP API
 Breaking Change
 Interactions
 Activities
-Embedded App SDK
 Premium Apps
+Embedded App SDK
+Gateway
 Voice
 Components
 User Apps
-Gateway
 Docs
 Documentation
 RPC
@@ -23,6 +23,138 @@ Discord Developers Server
 .
 Copy page
 Copy page
+​
+September 22, 2026
+Gateway
+Activities
+Premium Apps
+Discord Social SDK
+​
+Age Assurance: What It Means for Discord Developers
+We
+recently announced the launch of age assurance
+. For most developers, nothing changes: existing apps, bots, games, Activities, and Social SDK integrations continue to work as is.
+There are four behaviors you may observe as these protections roll out. These are things your app might encounter at runtime, not changes you need to implement.
+Bots & Apps:
+Private Profiles limit the visibility of custom statuses from user presence.
+Activities:
+Age-restricted Activities may require users to confirm their age group.
+Commerce:
+Parent-set spending limits may prevent some purchases.
+Social SDK:
+DMs may be filtered to Message Requests more often.
+Full details are available in our
+help center article
+. If you hit something unexpected, please open a ticket with Developer Support.
+​
+September 18, 2026
+HTTP API
+​
+New Invite Target User Endpoints and Options
+Create Channel Invite
+now takes an array of target user IDs without uploading a CSV file by using
+target_user_ids
+.
+Update Target Users
+replaces an invite’s entire target user list from an uploaded CSV, which is processed as an asynchronous job. Changing a single user meant rebuilding and re-uploading the whole file. These four endpoints adjust the list in place, extending the
+invite endpoints
+.
+Add Target User
+: Adds a single user to an invite’s target users
+Remove Target User
+: Removes a single user from an invite’s target users
+Bulk-Add Target Users
+: Adds multiple users, passed as a
+user_ids
+array of snowflakes
+Bulk-Delete Target Users
+: Removes multiple users, passed as a
+user_ids
+array of snowflakes
+All four require the caller to be the inviter or have the
+MANAGE_GUILD
+permission.
+​
+September 17, 2026
+Gateway
+​
+Custom Status Hidden by Profile Privacy Settings
+If a user’s
+Profile Privacy Setting
+is set to
+Friends Only
+, or to
+Friends & Small Servers Only
+in a guild with more than 200 members, their custom status (an
+activity object
+with
+type
+4
+) is omitted from the
+activities
+field of
+Presence Update
+events dispatched to that guild.
+This applies to apps and bots subscribed to the guild’s presence. Other activity types (Playing, Streaming, Listening, Watching, Competing) are not affected by this setting but may be controlled by
+Activity Sharing settings
+.
+​
+September 17, 2026
+Discord Social SDK
+HTTP API
+​
+Unlinking Accounts Guide
+We’ve published a new guide,
+Unlinking Accounts
+, covering best practices for unlinking a user’s Discord account from your game.
+The guide explains why you should always revoke a user’s access and refresh tokens when unlinking rather than only removing your own local record, what can go wrong if you don’t (including relinking conflicts), and how to handle out-of-band unlinks using the
+APPLICATION_DEAUTHORIZED
+webhook event.
+​
+September 15, 2026
+HTTP API
+Breaking Change
+​
+Shard Param Required for Get Current User Guilds with Large Bot Sharding
+Get Current User Guilds
+accepts a
+shard
+query param, which returns only the guilds stored in that shard.
+Apps using
+large bot sharding
+are
+required
+to pass it — requests without
+shard
+now return
+400 Bad Request
+. Valid values are
+0
+through
+max_concurrency - 1
+, using the
+max_concurrency
+returned by
+Get Gateway Bot
+,
+Apps that are not using large bot sharding are unaffected.
+​
+September 11, 2026
+Interactions
+​
+Slash Command Improvements and Mobile Fixes
+We’ve shipped a set of small improvements to slash commands from long-awaited feature requests:
+String options now support multiline input
+Command autocomplete now has fuzzy search, so you can skip letters or type
+/r a
+to find
+/role add
+When you switch channels and come back, the input now remembers which command you had selected
+We’ve also fixed bugs in the command experience on mobile:
+Fixed typing space while typing subcommands making the command picker disappear
+Fixed typing space to select a command sometimes selecting the wrong command
+Fixed slash command user options sometimes failing to find the user
+Fixed some minor UI issues in the app launcher
 ​
 September 3, 2026
 HTTP API
