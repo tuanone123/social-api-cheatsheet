@@ -22,6 +22,36 @@ There have been multiple updates to API documentation and coding tools including
 This page lists YouTube Data API (v3) changes and documentation updates.
 Subscribe to this changelog
 .
+September 14, 2026
+This update contains the following changes:
+The
+thumbnails.set
+method description has been updated to note that the maximum file size for uploaded thumbnails has increased from 2MB to 50MB.
+The
+playlistImages.insert
+method description has been updated to note that the maximum file size for uploaded images has increased from 2MB to 50MB.
+September 11, 2026
+The definition of the
+snippet.thumbnails.(key)
+property has been updated in the reference documentation for the
+activities
+,
+liveBroadcasts
+,
+playlistItems
+,
+playlists
+,
+search
+, and
+videos
+resources to note that higher-resolution thumbnail sizes are now available for some videos:
+fhd
+(1080p),
+qhd
+(1440p), and
+uhd
+(4K).
 September 1, 2026
 The
 videos.getRating
@@ -69,10 +99,8 @@ August 6, 2026
 This update contains the following changes:
 All references to
 contentDetails.like
-,
+and
 contentDetails.favorite
-, and
-contentDetails.subscription
 fields under
 activities.contentDetails
 have been removed from public documentation as these fields are not returned by the API.
